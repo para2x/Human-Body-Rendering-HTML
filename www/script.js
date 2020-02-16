@@ -4,25 +4,6 @@ $('#human-body').on('click', '.part', (ev) => {
   
 })
 
-function gradientColor(bodyPart) {
-  var name = Object.keys(bodyPart)[0];
-  var value = Object.values(bodyPart)[0];
-  var color;
-  
-  if (value < 25) {
-    color = 'blue';
-  } else if (value < 50) {
-    color = 'green';
-  } else {
-    color = 'red';
-  }
-    
-  var element = document.getElementById(name);
-    if (element) {
-    element.style.fill = color;
-  }
-}
-
 Shiny.addCustomMessageHandler('body_data', function(color) {
     parts = color.body_part
     vals = color.values
